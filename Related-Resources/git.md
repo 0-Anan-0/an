@@ -23,7 +23,7 @@ $ ssh-keygen -t rsa -C "123@126.com"
 接下来到GitHub上，打开“Account settings”–“SSH Keys”页面，然后点击“Add SSH Key”，填上Title（随意写，但最好自己知道是什么意思），在Key文本框里粘贴 id_rsa.pub文件里的全部内容。
 
 3.1转到ssh设置界面
-![img.png](img/img.png)
+![img.png](img/img0.png)
 
 3.2点击新增ssh
 
@@ -63,10 +63,11 @@ git commit -m "首次提交"
 
 git push -u origin master
 ![img_3.png](img/img_3.png)
-
+## 分支
+![img.png](img/img.png)
 ## 额外指令
 ```# 初始化本地仓库（生成 .git 目录）
-git init``
+git init
 
 # 克隆远程仓库（HTTPS/SSH 两种方式）
 git clone https://github.com/0-Anan-0/an.git  # HTTPS 方式
