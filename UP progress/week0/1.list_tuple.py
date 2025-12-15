@@ -5,13 +5,18 @@ list1 = ['yi','qw','er']
 print(type(list1))
 print(list1)
 
-ll1=list1.insert(1,'insert')
-ll2=list1.append('append')
+# 执行 append ,insert 是在list1本身上操作，不是赋值 ，所以直接赋值给 ll1 =NONE
+
+list1.insert(1,'insert')
+list1.append('append')
 ll3=list1.sort()
-ll4=list1.pop(1)
-ll5=list1.remove('yi')
+list1.pop(1)
+list1.remove('yi')
 print(ll3)
-print(ll1,ll2,ll4,ll5,ll3)
+
+ll1 = list1+['NOne']
+print(list1,ll1)
+
 
 
 l2=[['q','w','e'],['1','2','3'],['a1','b2','c3']]
