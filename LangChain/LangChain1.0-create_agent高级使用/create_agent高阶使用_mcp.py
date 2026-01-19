@@ -7,7 +7,7 @@ from langchain.agents import create_agent
 model = init_chat_model(
     model="deepseek-chat",
     base_url="https://api.deepseek.com",
-    api_key=""
+    api_key="086d6969e25d381683da43f099611157"
 )
 
 mcp_client = MultiServerMCPClient(
