@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+langchain
+PyMuPDF
+Pillow
+langchain-text-splitters
+python-multipart
