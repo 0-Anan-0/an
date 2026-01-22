@@ -9,19 +9,33 @@ from langchain.chat_models import init_chat_model
 class Context:
     user_level: str = "expert"
 
+# deepseek_model = init_chat_model(
+#     model="deepseek-reasoner",
+#     base_url="https://api.deepseek.com",
+#     api_key=""
+# )
 deepseek_model = init_chat_model(
-    model="deepseek-reasoner",
-    base_url="https://api.deepseek.com",
-    api_key=""
-)
-
-Qwen3_model = init_chat_model(
-    model="Qwen/Qwen3-8B",
-    model_provider="openai",
+    # model="Qwen/Qwen3-8B",
+    model = "deepseek-ai/DeepSeek-R1",
+    # base_url="https://api.deepseek.com",
     base_url="https://api.siliconflow.cn/v1/",
-    api_key="",
+    model_provider='openai',
+    api_key="sk-wehvzonmynihpjynmjfduegiqrnlmfkvostertgwwjxdfjhv"
 )
-
+# Qwen3_model = init_chat_model(
+#     model="Qwen/Qwen3-8B",
+#     model_provider="openai",
+#     base_url="https://api.siliconflow.cn/v1/",
+#     api_key="",
+# )
+Qwen3_model = init_chat_model(
+    # model="Qwen/Qwen3-8B",
+    model = "deepseek-ai/DeepSeek-R1",
+    # base_url="https://api.deepseek.com",
+    base_url="https://api.siliconflow.cn/v1/",
+    model_provider='openai',
+    api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk"
+)
 
 class ExpertiseBasedToolMiddleware(AgentMiddleware):
     def wrap_model_call(
@@ -54,7 +68,7 @@ question = "你好请问你是?"
 
 for step in agent.stream(
     {"messages": {'role':'user', 'content':question}},
-    context=Context(user_level='student'),
+    context=Context(user_level='expert'),
     stream_mode="values",
 ):
     step['messages'][-1].pretty_print()

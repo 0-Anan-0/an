@@ -48,11 +48,18 @@ class MessageResponse(BaseModel):
 
 def get_chat_model():
     try:
+        # model = init_chat_model(
+        #     model="Qwen/Qwen3-Omni-30B-A3B-Instruct",  # 模型名称
+        #     model_provider="openai",  # 模型提供商，硅基流动提供了openai请求格式的访问
+        #     base_url="https://api.siliconflow.cn/v1/",  # 硅基流动模型的请求url
+        #     api_key="",  # 填写你注册的硅基流动 API Key
+        # )
         model = init_chat_model(
-            model="Qwen/Qwen3-Omni-30B-A3B-Instruct",  # 模型名称
-            model_provider="openai",  # 模型提供商，硅基流动提供了openai请求格式的访问
-            base_url="https://api.siliconflow.cn/v1/",  # 硅基流动模型的请求url
-            api_key="",  # 填写你注册的硅基流动 API Key
+        model="Qwen/Qwen3-Omni-30B-A3B-Instruct",
+        # model = "deepseek-ai/DeepSeek-R1",
+        base_url="https://api.siliconflow.cn/v1/",
+        model_provider='openai',
+        api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk"
         )
         return model
     except Exception as e:

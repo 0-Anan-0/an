@@ -56,7 +56,7 @@ def get_chat_model():
             #model="Qwen/Qwen3-Omni-30B-A3B-Thinking",
             model_provider="openai",  # 模型提供商，硅基流动提供了openai请求格式的访问
             base_url="https://api.siliconflow.cn/v1/",  # 硅基流动模型的请求url
-            api_key="",  # 填写你注册的硅基流动 API Key
+            api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk",  # 填写你注册的硅基流动 API Key
         )
         return model
     except Exception as e:

@@ -4,9 +4,11 @@ from langchain.chat_models import init_chat_model
 from langgraph.checkpoint.memory import InMemorySaver
 
 model = init_chat_model(
-    model="deepseek-chat",
-    base_url="https://api.deepseek.com",
-    api_key=""
+    model="Qwen/Qwen3-8B",
+    # base_url="https://api.deepseek.com",
+    base_url="https://api.siliconflow.cn/v1/",
+    model_provider='openai',
+    api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk"
 )
 
 agent = create_agent(

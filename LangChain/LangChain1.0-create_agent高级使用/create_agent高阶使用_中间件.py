@@ -22,11 +22,13 @@ config = {
 }
 
 model = init_chat_model(
-    model="deepseek-chat",
-    base_url="https://api.deepseek.com",
-    api_key=""
+    # model="Qwen/Qwen3-8B",
+    model = "deepseek-ai/DeepSeek-R1",
+    # base_url="https://api.deepseek.com",
+    base_url="https://api.siliconflow.cn/v1/",
+    model_provider='openai',
+    api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk"
 )
-
 agent = create_agent(
     model=model,
     tools=[get_weather],

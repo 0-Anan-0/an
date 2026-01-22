@@ -1,5 +1,6 @@
 import asyncio
 
+from langchain.agents.structured_output import AutoStrategy
 from langchain.chat_models import init_chat_model
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain.agents import create_agent
@@ -36,6 +37,7 @@ async def get_server_tools():
     agent_with_mcp = create_agent(
         model,
         tools=mcp_tools,
+        # response_format=AutoStrategy(Result),
         system_prompt = "你是一个高德地图规划助手，能帮我规划形成和获得地图基本信息"
     )
     result = await agent_with_mcp.ainvoke(
@@ -46,8 +48,8 @@ async def get_server_tools():
             }
         }
     )
-    for msg in result['messages']:
-        msg.pretty_print()
+    # for msg in result['messages']:
+    #     msg.pretty_print()
 
 
 asyncio.run(get_server_tools())

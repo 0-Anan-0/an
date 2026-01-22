@@ -13,11 +13,18 @@ class Result(BaseModel):
     distance: float
 
 model = init_chat_model(
-    model="deepseek-chat",
-    base_url="https://api.deepseek.com",
-    api_key=""
-)
+    # model="deepseek-chat",
+    # base_url="https://api.deepseek.com",
+    # api_key=""
 
+)
+model = init_chat_model(
+    model="Qwen/Qwen3-8B",
+    # base_url="https://api.deepseek.com",
+    base_url="https://api.siliconflow.cn/v1/",
+    model_provider='openai',
+    api_key="sk-vbjmyxntwveksmhflvcoxnhvfgkzxakbfzsgjuyhaddynbkk"
+)
 mcp_client = MultiServerMCPClient(
     {
         "amap-maps": {
@@ -29,7 +36,7 @@ mcp_client = MultiServerMCPClient(
                 "@amap/amap-maps-mcp-server"
               ],
               "env": {
-                "AMAP_MAPS_API_KEY": ""
+                "AMAP_MAPS_API_KEY": "086d6969e25d381683da43f099611157"
               },
               'transport': 'stdio'
             }

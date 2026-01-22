@@ -150,3 +150,5 @@ LangChain为常见场景提供了以下预置中间件：
 - PIIMiddleware在发送至模型前自动屏蔽敏感信息
 - SummarizationMiddleware当对话历史过长时自动进行内容浓缩
 - HumanInTheLoopMiddleware敏感工具调用需经人工审批
+
+## 自定义中间件
