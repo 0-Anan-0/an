@@ -9,4 +9,4 @@ class Mystate(BaseModel):
 state =Mystate(x=1)
 print(state.x)
 print(state.y)
-state1=Mystate(x='!')
+# state1=Mystate(x='!')
